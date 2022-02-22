@@ -17,13 +17,11 @@ const url = 'https://www.gktoday.in/current-affairs/page/2/';
 
     for (const node of title) {
         let actualTitle = node.children[0].data;
-        collection.push(actualTitle);
+        collection.push({title: actualTitle});
     }
 
     console.log('data is');
     console.log(collection);
-
-    fs.writeFileSync('collection.json', collection);
 
     const csv = (new json2csv()).parse(collection);
     fs.writeFileSync('collection.csv', csv);
