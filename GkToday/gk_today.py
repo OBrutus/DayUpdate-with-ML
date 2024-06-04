@@ -1,4 +1,4 @@
-from model import GkTodayNewsItem
+from model import GkTodayNewsHeadlineItem
 from bs4 import BeautifulSoup
 
 
@@ -18,6 +18,6 @@ class GkTodayUrl:
 
 class GkTodayUtil:
     @staticmethod
-    def get_news_headline(html_headline_str: str) -> GkTodayNewsItem:
+    def get_news_headline(html_headline_str: str) -> GkTodayNewsHeadlineItem:
         soup = BeautifulSoup(html_headline_str, 'lxml')
         soup.find('a')
